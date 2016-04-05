@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Jamie XX European Tour Dates </title>	
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
+<style>
+
+body {
+		
+    padding: 2;
+    margin: 4;
+}
+html, body, #map {
+    height: 100%;
+}
+
+body {
+		font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+}
+
+#wrapper {
+		width: 960px;
+		margin: 2 auto;
+}
+
+#map {
+		height: 580px;
+		margin: 0 auto;
+   }
+.legend {
+        line-height: 18px;
+        color: #555;
+        }
+.legend i {
+        width: 18px;
+        height: 18px;
+        float: left;
+        margin-right: 8px;
+        opacity: 0.7;
+        }
+
+ }
+ .info {
+        padding: 6px 8px;
+        font: 14px/16px Verdana, Geneva, sans-serif;
+        background: white;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        border-radius: 5px;
+        }
+.info h4 {
+        font-family: Verdana, Geneva, sans-serif;
+        margin: 0 0 5px;
+            color: #065581;
+        }
+
+</style>
+
+</head>
+
+<body>
+	<div id = "map"></div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		var cities;
+		var map = L.map('map', {
+			center: [49.739695, 9.087625],
+			zoom: 5,
+			minZoom: 5
+		});
+
+		L.tileLayer(
+			'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+	subdomains: 'abcd',
+	minZoom: 5,
+	maxZoom: 18
+			}).addTo(map);
+
+//AUTOMATIC POPUP
+var popup = L.popup()
+    .setLatLng([43.594580, -4.451395])
+    .setContent("Click Icons to See Dates and Buy Tickets.")
+    .openOn(map);
+
+
+//ICON LOGOS FOR POPUPS
+		var logoone = L.icon({
+    iconUrl: 'logo1.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+})
+		var logotwo = L.icon({
+    iconUrl: 'logo2.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+})
+
+		var logothree = L.icon({
+    iconUrl: 'logo3.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});
+
+		var logofour = L.icon({
+    iconUrl: 'logo4.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});
+
+		var logofive = L.icon({
+    iconUrl: 'logo5.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+		var logosix = L.icon({
+    iconUrl: 'logo6.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+		var logoseven = L.icon({
+    iconUrl: 'logo7.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+
+		var logoeight = L.icon({
+    iconUrl: 'logo8.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+
+		var logonine = L.icon({
+    iconUrl: 'logo9.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+		var logoten = L.icon({
+    iconUrl: 'logo10.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+
+		var logoeleven = L.icon({
+    iconUrl: 'logo11.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+
+		var logotwelve = L.icon({
+    iconUrl: 'logo12.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+
+		var logothirteen = L.icon({
+    iconUrl: 'logo13.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+
+		var logofourteen = L.icon({
+    iconUrl: 'logo14.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+
+		var logofifthteen = L.icon({
+    iconUrl: 'logo15.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+		var logosixteen = L.icon({
+    iconUrl: 'logo16.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+
+		var logoseventeen = L.icon({
+    iconUrl: 'logo17.png',
+
+    iconSize:     [30, 35], // size of the icon
+    iconAnchor:   [10, 50], // point of the icon which will correspond to marker's location
+    popupAnchor:  [10, -45] // point from which the popup should open relative to the iconAnchor
+});		
+
+
+//MARKER TOUR POINTS
+		L.marker([45.7618318, 4.83773910000002], {icon: logoone}).addTo(map)
+					.bindPopup ($('<a href="http://www.digitick.com/ns-days-samedi-a-day-with-jamie-xx-festival-la-sucriere-lyon-16-mai-2015-css5-nuitssonores-pg101-ri2833355.html" target="_blank"> <center> <b> May 16 <b> <br> Nuits Sonores </br> <br> Lyon, France </br> </center> </a> ').click(function() {goto("Buy tickets for Nuits sonores");})[0]);
+
+		L.marker([53.401678, -2.97518400000001], {icon: logotwo}).addTo(map)
+					.bindPopup ($('<a href="http://www.skiddle.com/whats-on/Liverpool/St-Lukes-Bombed-Out-Church/Freeze-Presents-Young-Turks-Showcase---Jamie-XX-John-Talabot/12319543/" target="_blank"> <center> <b> May 23 <b> <br> YT @ Bombed Out Church </br> <br> Liverpool, United Kingdom </br> </center> </a>').click(function() {goto("Buy Tickets for Bombed out Church");})[0]);
+
+		L.marker([53.343322, -6.30010500000003], {icon: logothree}).addTo(map)
+					.bindPopup ($('<a href="http://www.ticketmaster.ie/forbidden-fruit-saturday-only-dublin-05-30-2015/event/18004E348B570FA7?artistid=1557277&majorcatid=10001&minorcatid=60" target="_blank"> <center> <b> May 30 <b> <br>Forbidden Fruit</br> <br> Dublin, Ireland </br> </center> </a>').click(function() {goto("Frobidden Fruit");})[0]);
+
+		L.marker([51.5508096, -0.0523370999999315], {icon: logofour}).addTo(map)
+					.bindPopup ($('<a href="http://www.ticketmaster.co.uk/jamie-xx-london-05-06-2015/event/1F004E7AF80AF100" target="_blank"> <center> <b> June 5 <b> <br> St. Johns Church </br> <br> London, United Kingdom </br> </center> </a>').click(function() {goto("St. Johns");})[0]);
+
+		L.marker([53.533892, -2.25506100000006], {icon: logofive}).addTo(map)
+					.bindPopup ($('<a href="http://www.parklife.uk.com/tickets.php" target="_blank"> <center> <b> June 6 <b> <br> Parklife </br> <br> Manchester, United Kingdom </br> </center> </a>').click(function() {goto("Buy Tickets parklife");})[0]);
+
+		L.marker([50.83357, 0.290973000000008], {icon: logosix}).addTo(map)
+					.bindPopup($('<a href="http://wildlifefestival.com" target="_blank"> <center> <b> June 7 <b> <br> Wildlife </br> <br> Brighton, United Kingdom </br> </center> </a>').click(function() {goto("Wildlife");})[0]);
+
+
+		L.marker([41.3850639, 2.17340349999994], {icon: logoseven}).addTo(map)
+					.bindPopup($('<a href="http://sonar.es/en/pg/tickets" target="_blank"> <center> <b> June 19 <b> <br> Sonar </br> <br> Barcelona, Spain </br> </center> </a>').click(function() {goto("Sonar");})[0]);
+
+		L.marker([52.386844, 4.86897399999998], {icon: logoeight}).addTo(map)
+					.bindPopup($('<a href="http://www.ticketmaster.nl/feature/pitch/?l=nl-nl&language=nl-nl" target="_blank"> <center> <b> July 4 <b> <br> Pitch </br> <br> Amsterdamn, Netherlands </br> </center> </a>').click(function() {goto("Pitch");})[0]);
+
+		L.marker([55.615673, 12.078206], {icon: logonine}).addTo(map)
+					.bindPopup($('<a href="http://www.roskilde-festival.dk/tickets" target="_blank"> <center> <b> July 4 <b> <br> Roskilde Festival </br> <br> Roskilde, Denmark </br> </center> </a>').click(function() {goto("Rosklide");})[0]);	
+
+		L.marker([46.4391918, 6.90464650000001], {icon: logoten}).addTo(map)
+					.bindPopup($('<a href="http://www.montreuxjazzfestival.com/en/program15" target="_blank"> <center> <b> July 9 <b> <br> Montreux Festival </br> <br> Vaud, Switzerland </br> </center> </a>').click(function() {goto("Montreux");})[0]);
+
+		L.marker([51.758284, 12.4471379999999], {icon: logoeleven}).addTo(map)
+					.bindPopup($('<a href="http://www.meltfestival.de/tickets/" target="_blank"> <center> <b> July 17 <b> <br> Melt Festival </br> <br> Gräfenhainichen, Germany </br> </center> </a>').click(function() {goto("Melt");})[0]);
+
+		L.marker([50.9524958, 5.35045089999994], {icon: logotwelve}).addTo(map)
+					.bindPopup($('<a href="http://www.pukkelpop.be/nl/" target="_blank"> <center> <b> August 21 <b> <br> Pukkelpop </br> <br> Hasselt, Belgium </br> </center> </a>').click(function() {goto("Pukkelpop");})[0]);
+
+		L.marker([51.883333, -3.39999999999997], {icon: logothirteen}).addTo(map)
+					.bindPopup($('<a href="http://www.greenman.net" target="_blank"> <center> <b> August 22 <b> <br> Green Man Festival </br> <br> South Wales, United Kingdom </br> </center> </a>').click(function() {goto("Green Man");})[0]);
+
+		L.marker([53.868522, -1.38170200000001], {icon: logofourteen}).addTo(map)
+					.bindPopup($('<a href="http://www.leedsfestival.com" target="_blank"> <center> <b> August 28 <b> <br> Leeds Festival </br> <br> Leeds, United Kingdom </br> </center> </a>').click(function() {goto("Leeds");})[0]);
+
+		L.marker([48.839833, 2.220863], {icon: logofifthteen}).addTo(map)
+					.bindPopup($('<a href="http://www.digitick.com/index-css5-rockenseine-pg1.html" target="_blank"> <center> <b> August 29 <b> <br> Rock En Sein </br> <br> Paris, France </br> </center> </a>').click(function() {goto("Rock En Sein");})[0]);
+
+		L.marker([51.459372, -0.979654], {icon: logosixteen}).addTo(map)
+					.bindPopup($('<a href="http://www.readingfestival.com" target="_blank"> <center> <b> August 30 <b> <br> Reading Festival </br> <br> Reading, United Kingdom </br> </center> </a>').click(function() {goto("Reading");})[0]);
+
+		L.marker([50.687715, -1.24513999999999], {icon: logoseventeen}).addTo(map)
+					.bindPopup($('<a href="http://www.ticketline.co.uk/bestival-tickets" target="_blank"> <center> <b> September 10 <b> <br> Bestival </br> <br> Isel Of Wight, United Kingdom </br> </center> </a>').click(function() {goto("Bestival");})[0]);
+
+// LEGEND
+        var legend = L.control({position: 'bottomright'});
+
+        legend.onAdd = function (map) {
+        var div = L.DomUtil.create('div', 'info legend');
+
+            div.innerHTML +=
+            '<img src="legend2.png" alt="legend" width="560" height="50">';
+
+        return div;
+        };
+
+        legend.addTo(map);
+		
+	});
+//Created By Ramzi Al-Aruri
+//GMU SPRING 2015 GGS 411
+</script>
+
+</body>
+</html>
+
